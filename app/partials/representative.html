@@ -1,0 +1,16 @@
+﻿<div class="representatives view">
+  <div class="container">
+    <header>
+      <h3>Representative</h3>
+    </header>
+    <br />
+    <div>
+      <div class="row cardContainer">
+        <div class="span3 card" data-ng-repeat="representative in representatives | orderBy:'state'">
+          <div class="cardHeader">{{representative.firstname}} {{representative.lastname}}</div>
+          <div class="cardBody">{{representative.state}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

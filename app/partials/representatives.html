@@ -1,0 +1,26 @@
+﻿<div class="representatives view">
+  <div class="container">
+    <header>
+      <h3>Search Representatives</h3>
+    </header>
+    <br />
+    <div>
+      <div class="row cardContainer">
+        <div class="span3 card">
+          <div class="cardHeader">Search:</div>
+          <div class="cardBody">
+            <input type="text" data-ng-model="stateText" />
+          </div>
+        </div>
+        <div data-ng-repeat="representative in representatives | filter:stateText | orderBy:'state'">
+          <a href="#/representative/{{representative.person.osid}}">
+            <div class="span3 card">
+              <div class="cardHeader">{{representative.person.firstname}} {{representative.person.lastname}}</div>
+              <div class="cardBody">{{representative.description}} ({{ representative.state }})</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html data-ng-app="representativesApp">
+<head>
+  <title>Representatives App</title>
+  <link href="Content/bootstrap.min.css" rel="stylesheet" />
+  <link href="Content/bootstrap-responsive.min.css" rel="stylesheet" />
+  <link href="Content/representativeAppStyles.css" rel="stylesheet" />
+</head>
+<body>
+
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand " href="#/">
+          <img src="" alt="">Your_Representatives_Via_Angular.js
+        </a>
+        <ul class="nav nav-pills" data-ng-controller="NavbarController">
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div animated-view></div>
+
+  <div id="footer">
+    <div class="navbar navbar-fixed-bottom">
+      <div class="navbar-inner">
+        <div class="container">
+          <footer>
+            <div class="row">
+              <div class="span4">
+              </div>
+              <div class="span4">
+              </div>
+              <div class="span4">
+              </div>
+            </div>
+         </footer>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="Scripts/angular.js"></script>
+  <script src="Scripts/angular-route.js"></script>
+  <script src="Scripts/jquery.min.js"></script>
+
+  <script src="Scripts/bootstrap.js"></script>
+
+  <script src="app/app.js"></script>
+  <script src="app/controllers/controllers.js"></script>
+  <script src="app/services/representativesService.js"></script>
+  <script src="app/directives/animatedView.js"></script>
+</body>
+</html>
