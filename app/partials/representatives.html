@@ -1,4 +1,4 @@
-﻿<div class="representatives view">
+﻿<div class="representatives view" data-ng-controller="RepsController">
   <div class="container">
     <header>
       <h3>Search Representatives</h3>
@@ -6,17 +6,25 @@
     <br />
     <div>
       <div class="row cardContainer">
-        <div class="span3 card">
-          <div class="cardHeader">Search:</div>
-          <div class="cardBody">
+        <div class="span12 searchBar">
+          <div class="searchInput">
+            <span class="searchLabel">Search:</span>
             <input type="text" data-ng-model="stateText" />
           </div>
         </div>
         <div data-ng-repeat="representative in representatives | filter:stateText | orderBy:'state'">
-          <a href="#/representative/{{representative.person.osid}}">
-            <div class="span3 card">
+          <a href="#/representative/{{representative.person.id}}">
+            <div class="span4 card">
               <div class="cardHeader">{{representative.person.firstname}} {{representative.person.lastname}}</div>
-              <div class="cardBody">{{representative.description}} ({{ representative.state }})</div>
+              <div class="cardBody">
+                <div>{{representative.description}} ({{ representative.state }})</div>
+                <div><a href="{{representative.website}}" target="blank_">{{representative.person.lastname}}'s website</a>
+                </div>
+                <div>Start date: {{representative.startdate}}
+                </div>
+                <div>End date: {{representative.enddate}}
+                </div>
+              </div>
             </div>
           </a>
         </div>

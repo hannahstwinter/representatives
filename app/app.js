@@ -4,12 +4,12 @@ app.config(function ($routeProvider) {
   $routeProvider
     .when('/representatives',
       {
-        controller: 'RepresentativesController',
+        controller: 'RepsController',
         templateUrl: '/app/partials/representatives.html'
       })
     .when('/representative/:representativeID',
       {
-        controller: 'RepresentativeController',
+        controller: 'RepController',
         templateUrl: '/app/partials/representative.html'
       })
     .otherwise({ redirectTo: '/representatives' });

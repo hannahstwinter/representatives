@@ -8,11 +8,20 @@
   opacity: 0.0;
 }
 
+.searchLabel {
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.searchBar {
+  margin-bottom: 10px;
+}
+
 .card {
   background-color:#efefef;
   border: 1px solid black;
-  height:75px;
-  width: 225px;
+  height:130px;
+  width: 300px;
   margin-bottom: 20px;
 }
 

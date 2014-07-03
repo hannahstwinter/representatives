@@ -1,28 +1,27 @@
-﻿app.controller('RepresentativesController', function ($scope, representativesService, $http) {
+﻿app.controller('RepsController', function ($rootScope, $scope, repsService) {
   init();
 
   function init() {
-    // $scope.representatives = representativesService.getRepresentatives();
-    $http({method: 'GET', url: 'https://www.govtrack.us/api/v2/role?current=true'}).
-    success(function(data, status, headers, config) {
-    }).
-    error(function(data, status, headers, config) {
-    }).then(function(data) {
-      $scope.representatives = data.data.objects;
+    repsService.getReps(function (dataResponse) {
+      $rootScope.representatives = dataResponse.objects;
     });
   }
 });
 
-app.controller('RepresentativeController', function ($scope, $routeParams, representativesService) {
+app.controller('RepController', function ($rootScope, $scope, $routeParams, repsService) {
   var representativeID;
-
-  $scope.representative = {};
 
   init();
 
   function init() {
-    // representativeID = ($routeParams.representativeID) ? parseInt($routeParams.representativeID) : 0;
-    // $scope.representative = representativesService.getRepresentative(representativeID);
+    representativeID = $routeParams.representativeID;
+    $scope.representative = repsService.getRep(
+      representativeID,
+      function (dataResponse) {
+        $scope.representative = dataResponse;
+        $scope.firstname = $scope.representative.person.firstname;
+      }
+    );
   }
 });
 
